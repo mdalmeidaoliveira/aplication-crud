@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.Serializable;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class UserController implements Serializable {
     }
 
     @PostMapping(value = "/user")
-    public User save(@RequestBody User obj){
+    public User save(@RequestBody @Valid User obj){
         return userService.save(obj);
     }
 

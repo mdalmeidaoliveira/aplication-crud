@@ -22,7 +22,7 @@ public class ControllerExceptionHandler {
         error.setPath(request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
-    
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<StandardError> EntityNotFound(Exception e, HttpServletRequest request){
         StandardError error = new StandardError();
